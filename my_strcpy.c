@@ -5,10 +5,10 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Oct  5 09:35:33 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 20:23:32 2015 louis-emile uberti-ares
+** Last update Thu Oct  8 18:12:03 2015 louis-emile uberti-ares
 */
 
-int	*my_strcpy(char *dest, char *src)
+char	*my_strcpy(char *dest, char *src)
 {
   int	i;
 

@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Tue Oct  6 17:39:09 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 16:45:36 2015 louis-emile uberti-ares
+** Last update Thu Oct  8 08:55:22 2015 louis-emile uberti-ares
 */
 
 char	*my_strcat(char *dest, char *src)
@@ -15,16 +15,17 @@ char	*my_strcat(char *dest, char *src)
 
   i = 0;
   a = 0;
-  while (dest[a] != '\0')
+  while (dest[i] != '\0')
     {
-      a = a + 1;
+      i = i + 1;
     }
   while (src[i] != '\0')
     {
-      src[i - 1] = '\0';
-      dest[a] = src[i];
+      dest[i] = src[a];
       a = a + 1;
-      i = i + 1;
+      i = i + 2;
+      dest[i] = '\0';
+      i = i - 1;
     }
   return (dest);
 }
