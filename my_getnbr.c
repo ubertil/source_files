@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Fri Oct  9 11:44:36 2015 louis-emile uberti-ares
-** Last update Fri Oct  9 21:45:56 2015 louis-emile uberti-ares
+** Last update Sat Oct 10 14:32:22 2015 louis-emile uberti-ares
 */
 
 int	my_get_sign(char *str)
@@ -14,7 +14,7 @@ int	my_get_sign(char *str)
   int	sign;
 
   i = 0;
-  sign = 1;
+  sign = 0;
   while ((str[sign] != '\0') && ( i == 0))
     {
       if ((str[sign] >= 48) && (str[sign] <= 57))
@@ -84,20 +84,17 @@ int	my_getnbr(char *str)
 	}
       rang = rang + 1;
     }
-  return (nb);
+  my_disp_sign(str, nb);
 }
 
-int	my_disp_sign(char *str)
+int	my_disp_sign(char *str, int nb)
 {
   int	sign;
-  int	nb;
 
   sign = my_get_sign(str);
-  nb = my_get_nbr(str);
   if (sign == 2)
     {
-      nb = nb * -1;
-      return (nb);
+      return (-nb);
     }
   if (sign == 1)
     {
