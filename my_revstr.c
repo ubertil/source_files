@@ -5,29 +5,24 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Oct  5 11:50:55 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 20:25:41 2015 louis-emile uberti-ares
+** Last update Tue Oct 13 19:49:24 2015 louis-emile uberti-ares
 */
 
 char	*my_revstr(char *str)
 {
-  char	revstr[] = "\n";
   int	i;
-  int	count;
+  int	str_size;
+  int	temp_var;
 
   i = 0;
-  count = 0;
-  while (str[i] != '\0')
+  str_size= (my_strlen(str) - 1);
+  while (i < str_size)
     {
-      revstr[i] = str[i];
+      temp_var = str[i];
+      str[i] = str[str_size];
+      str[str_size] = temp_var;
       i = i + 1;
-    }
-  i = i + 1;
-  revstr[i] = '\0';
-  while (i > 0)
-    {
-      str[i - 1] = revstr[count - 1];
-      count = count + 1;
-      i = i - 1;
+      str_size = str_size - 1;
     }
   return (str);
 }
