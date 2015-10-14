@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Tue Oct  6 11:39:06 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 20:36:24 2015 louis-emile uberti-ares
+** Last update Wed Oct 14 17:42:51 2015 louis-emile uberti-ares
 */
 
 char	*my_strupcase(char *str)

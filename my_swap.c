@@ -5,14 +5,14 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:55:36 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 20:08:41 2015 louis-emile uberti-ares
+** Last update Wed Oct 14 17:52:23 2015 louis-emile uberti-ares
 */
 
 int	my_swap(int *a, int *b)
 {
-  int	bin;
+  int	temp;
 
-  bin = *b;
+  temp = *b;
   *b = *a;
-  *a = bin;
+  *a = temp;
 }

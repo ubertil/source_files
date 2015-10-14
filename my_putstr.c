@@ -5,17 +5,17 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:56:42 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 20:09:27 2015 louis-emile uberti-ares
+** Last update Wed Oct 14 17:30:40 2015 louis-emile uberti-ares
 */
 
 int	my_putstr(char *str)
 {
-  int	letsgo;
+  int	i;
 
-  letsgo = 0;
-  while (str[letsgo] != '\0')
+  i = 0;
+  while (str[i] != '\0')
     {
-      my_putchar(str[letsgo]);
-      letsgo = letsgo + 1;
+      my_putchar(str[i]);
+      i = i + 1;
     }
 }

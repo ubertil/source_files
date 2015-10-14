@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Tue Oct  6 21:06:32 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 20:40:36 2015 louis-emile uberti-ares
+** Last update Mon Oct 12 22:36:30 2015 louis-emile uberti-ares
 */
 
 int	my_str_isalpha(char *str)

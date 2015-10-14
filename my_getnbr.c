@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Fri Oct  9 11:44:36 2015 louis-emile uberti-ares
-** Last update Sat Oct 10 14:32:22 2015 louis-emile uberti-ares
+** Last update Wed Oct 14 17:24:13 2015 louis-emile uberti-ares
 */
 
 int	my_get_sign(char *str)

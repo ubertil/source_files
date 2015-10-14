@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Tue Oct  6 17:39:09 2015 louis-emile uberti-ares
-** Last update Thu Oct  8 08:55:22 2015 louis-emile uberti-ares
+** Last update Wed Oct 14 17:36:17 2015 louis-emile uberti-ares
 */
 
 char	*my_strcat(char *dest, char *src)

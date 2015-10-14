@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  8 14:44:09 2015 louis-emile uberti-ares
-** Last update Thu Oct  8 15:10:54 2015 louis-emile uberti-ares
+** Last update Wed Oct 14 17:34:42 2015 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
@@ -15,7 +15,7 @@ int	my_show_wordtab(char **tab)
   int	i;
   int	a;
   int	b;
-  char *str;
+  char	*str;
 
   i = 0;
   a = 0;
