@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct 22 11:41:29 2015 louis-emile uberti-ares
-** Last update Mon Oct 26 16:49:44 2015 louis-emile uberti-ares
+** Last update Sat Oct 31 18:02:49 2015 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
@@ -13,7 +13,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "include/my.h"
-#include "include/eval_expr.h"
+#include "include/bistromathique.h"
 
 int	par_checker(char *expr, char *to_use, char *base, char *operators)
 {
@@ -41,7 +41,7 @@ int	par_checker(char *expr, char *to_use, char *base, char *operators)
       my_putstr(PAR_MSG);
       return (1);
     }
-  my_putstr("CONFORME\n");
+  return (expr);
 }
 
 int	check_expr_twice(char *expr, char *to_use, char *base, char *operators)
@@ -49,7 +49,6 @@ int	check_expr_twice(char *expr, char *to_use, char *base, char *operators)
   int	tab[3];
 
   tab[0] = 0;
-  tab[1] = 0;
   if (my_strlen(operators) != 7)
     {
       my_putstr(OPERATORS_MSG);
@@ -120,7 +119,7 @@ int	check_base_ops(char *expr, char *to_use, char *base, char *operators)
   par_checker(expr, to_use, base, operators);
 }
 
-int	main(int ac, char **av)
+int	is_expr_valid(int ac, char **av)
 {
   char	*expr;
   char	*to_use;
@@ -143,7 +142,8 @@ int	main(int ac, char **av)
       return (1);
     }
   to_use = malloc(my_strlen(av[1]) + my_strlen(av[2]));
-  my_get_to_use(expr, to_use, av[1], av[2]);
+  if (to_use != NULL)
+    my_get_to_use(expr, to_use, av[1], av[2]);
   free(to_use);
   return (0);
 }

@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Wed Oct  7 09:20:24 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 16:09:55 2015 louis-emile uberti-ares
+** Last update Fri Oct 30 13:28:30 2015 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
@@ -19,16 +19,13 @@ char	*my_strdup(char *src)
   lenght = 0;
   i = 0;
   while (src[lenght] != '\0')
-    {
       lenght = lenght + 1;
-    }
-  dest = malloc(lenght);
+  dest = malloc(lenght + 1);
   while (src[i] != '\0')
     {
       dest[i] = src[i];
       i = i + 1;
     }
-  dest[i + 1] = '\0';
-  my_putstr(dest);
-  free(dest);
+  dest[i] = '\0';
+  return (dest);
 }

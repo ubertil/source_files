@@ -5,20 +5,21 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Oct  5 09:35:33 2015 louis-emile uberti-ares
-** Last update Wed Oct 14 17:36:54 2015 louis-emile uberti-ares
+** Last update Fri Oct 30 13:34:23 2015 louis-emile uberti-ares
 */
 
 char	*my_strcpy(char *dest, char *src)
 {
   int	i;
+  int	count;
 
-  i = 0;
+  count = my_strlen(dest);
   while (src[i] != '\0')
     {
-      dest[i] = src[i];
-      i = i + 2;
-      dest[i] = '\0';
-      i = i - 1;
+      dest[count] = src[i];
+      count = count + 1;
+      i = i + 1;
     }
+  dest[count] = '\0';
   return (dest);
 }
