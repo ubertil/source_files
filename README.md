@@ -14,4 +14,4 @@ Don't be afraid to take a look :)
                               **trogno_n 2015**
 
 >"*La bistro, tiens ça mange pas de pain*"
-[alt tag](http://image.noelshack.com/fichiers/2015/44/1446408471-la-bistro.jpg)
+[Tiens prends ça](http://image.noelshack.com/fichiers/2015/44/1446408471-la-bistro.jpg)
