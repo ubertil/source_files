@@ -20,4 +20,5 @@ Don't be afraid to take a look :)
 >*"non c'est le contraire"*
 >*"les cornes par le taureau ?!"*
 
-**EPITECH 2015 (uberti_l:trogno_n)**
+Juju putain :'(
+>RIP Bistromathique 2015-2015
