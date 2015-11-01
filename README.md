@@ -20,5 +20,6 @@ Don't be afraid to take a look :)
 >*"non c'est le contraire"*
 >*"les cornes par le taureau ?!"*
 
-- Juju putain :'(
+Juju putain :'(
+
 RIP Bistromathique 2015-2015
