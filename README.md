@@ -7,8 +7,8 @@ Here you can find evrything related to my libmy.a project, that every Epitech's 
 This is newby stuff so don't judge too harshly !
 Don't be afraid to take a look :)
 
-"C'est à la norme alors fuck !"
-                              uberti_l 2015
+>"*C'est à la norme alors fuck !*"
+                              **uberti_l 2015**
 
-"Ah ouais lourd !"
-                              trogno_n 2015
+>"*Ah ouais lourd !*"
+                              **trogno_n 2015**
