@@ -19,6 +19,7 @@ Don't be afraid to take a look :)
 >*"faut pas prendre le taureau par les cornes"*
 >*"non c'est le contraire"*
 >*"les cornes par le taureau ?!"*
+                              **trogno_n aka legéni 2015**
 
 Juju putain :'(
 
