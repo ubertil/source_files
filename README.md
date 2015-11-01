@@ -1,5 +1,5 @@
-# source_files
-My source files from my 2015 Epitech's library ! 
+# My Source Files
+1. My source files from my 2015 Epitech's library ! 
 
 Hello everyone !
 
