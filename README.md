@@ -7,7 +7,7 @@ Here you can find evrything related to my libmy.a project, that every Epitech's 
 This is newby stuff so don't judge too harshly !
 Don't be afraid to take a look :)
 
->"*C'est à la norme alors fuck !*"
+1-C'est à la norme alors fuck !*"
                               **uberti_l 2015**
 
 >"*Ah ouais lourd !*"
@@ -20,5 +20,5 @@ Don't be afraid to take a look :)
 >*"non c'est le contraire"*
 >*"les cornes par le taureau ?!"*
 
-Juju putain :'(
->RIP Bistromathique 2015-2015
+2-Juju putain :'(
+RIP Bistromathique 2015-2015
