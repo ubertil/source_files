@@ -12,3 +12,6 @@ Don't be afraid to take a look :)
 
 >"*Ah ouais lourd !*"
                               **trogno_n 2015**
+
+>"*La bistro, tiens ça mange pas de pain*"
+[alt tag](http://image.noelshack.com/fichiers/2015/44/1446408471-la-bistro.jpg)
