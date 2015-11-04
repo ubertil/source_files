@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Wed Oct  7 16:24:04 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 21:57:51 2015 louis-emile uberti-ares
+** Last update Wed Nov  4 11:56:38 2015 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
@@ -23,9 +23,7 @@ int	my_malloc(char *src, int argc, char **argv)
     {
       count = 0;
       while (argv[count][lenght] != '\0')
-	{
-	  lenght = lenght + 1;
-	}
+	lenght = lenght + 1;
       count = count + 1;
       lenght = lenght + 1;
       i = i + 1;

@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Oct  5 14:44:52 2015 louis-emile uberti-ares
-** Last update Mon Oct  5 14:51:10 2015 louis-emile uberti-ares
+** Last update Wed Nov  4 11:48:12 2015 louis-emile uberti-ares
 */
 
 int	my_power_it(int nb, int power)
@@ -16,16 +16,12 @@ int	my_power_it(int nb, int power)
   count = 1;
   result = 1;
   if (power > 0)
-    {
-      while (count < power)
-	{
-	  result = result * nb;
-	  count = count + 1;
-	}
-    }
+    while (count < power)
+      {
+	result = result * nb;
+	count = count + 1;
+      }
   else
-    {
-      return (0);
-    }
+    return (0);
   return (result);
 }

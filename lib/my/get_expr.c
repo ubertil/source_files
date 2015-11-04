@@ -5,13 +5,11 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct 22 14:23:01 2015 louis-emile uberti-ares
-** Last update Sat Oct 24 14:54:24 2015 louis-emile uberti-ares
+** Last update Wed Nov  4 11:41:07 2015 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <fcntl.h>
 
 char	*get_expr(unsigned int size)
 {
@@ -21,10 +19,10 @@ char	*get_expr(unsigned int size)
 
   tab[0] = 0;
   tab[1] = 1;
-  expr = malloc(size);
+  expr = malloc(size + 1);
   while ((tab[1] != 0) && (size != 0))
     {
-      tab[1] = read(STDIN_FILENO, buffer, 1);
+      tab[1] = read(0, buffer, 1);
       if (tab[1] != 0)
 	{
 	  expr[tab[0]] = buffer[0];
@@ -32,5 +30,6 @@ char	*get_expr(unsigned int size)
 	}
       size = size - 1;
     }
+  expr[size + 1] = '\0';
   return (expr);
 }

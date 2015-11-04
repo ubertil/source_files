@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Oct  5 14:51:19 2015 louis-emile uberti-ares
-** Last update Wed Oct  7 20:17:34 2015 louis-emile uberti-ares
+** Last update Wed Nov  4 11:48:39 2015 louis-emile uberti-ares
 */
 
 int	my_power_rec(int nb, int power)
@@ -20,9 +20,7 @@ int	my_power_rec(int nb, int power)
   else
     {
       if (power == 0)
-	{
-	  return (1);
-	}
+	return (1);
       return (0);
     }
 }

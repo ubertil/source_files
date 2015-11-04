@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  8 11:18:13 2015 louis-emile uberti-ares
-** Last update Mon Oct 12 09:35:01 2015 louis-emile uberti-ares
+** Last update Mon Nov  2 20:27:30 2015 louis-emile uberti-ares
 */
 
 #ifndef		MY_H_
@@ -43,4 +43,4 @@ char		*my_strcat(char *dest, char *src);
 char		*my_strncat(char *dest, char *src, int nb);
 int		my_strlcat(char *dest, char *src, int size);
 
-#endif
+#endif /* !MY_H */

@@ -5,31 +5,39 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Oct 20 09:15:07 2015 louis-emile uberti-ares
-## Last update Tue Oct 20 09:20:06 2015 louis-emile uberti-ares
+## Last update Wed Nov  4 10:16:46 2015 louis-emile uberti-ares
 ##
 
 NAME	= libmy.a
 
 CREATE	= ar rc
 
+SRCS	= *.c
+
+OBJS	= $(SRCS:.c=.o)
+
+CFLAGS	= -Wall
+
 RAN	= ranlib
 
 RM	= rm -rf
 
-CC	= cc -c
+CC	= gcc
 
 all: $(NAME)
 
 $(NAME):
-	@$(CC) *.c
-	@$(CREATE) $(NAME) *.o
-	@$(RAN) $(NAME)
+	$(CC) -c $(SRCS) $(CFLAGS)
+	$(CREATE) $(NAME) $(OBJS)
+	$(RAN) $(NAME)
 
 clean:
-	@$(RM) *.o
-	@$(RM) *~ *#
+	$(RM) $(OBJS)
+	$(RM) *~ *#
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
-re: fclean all
+re: clean fclean all
+
+.PHONY: fclean clean all re

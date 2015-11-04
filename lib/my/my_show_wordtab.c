@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  8 14:44:09 2015 louis-emile uberti-ares
-** Last update Wed Oct 14 17:34:42 2015 louis-emile uberti-ares
+** Last update Wed Nov  4 11:50:40 2015 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
@@ -20,7 +20,7 @@ int	my_show_wordtab(char **tab)
   i = 0;
   a = 0;
   b = 0;
-  str = malloc(sizeof(tab));
+  str = malloc(sizeof(tab) + 1);
   while (tab[i] != 0)
     {
       a = 0;

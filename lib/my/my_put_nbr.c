@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:41:42 2015 louis-emile uberti-ares
-** Last update Fri Oct  9 16:04:05 2015 louis-emile uberti-ares
+** Last update Wed Nov  4 11:49:28 2015 louis-emile uberti-ares
 */
 
 int	my_printmotherfucker(int nb)
@@ -35,13 +35,9 @@ int	my_put_nbr(int nb)
       nb = nb * -1;
     }
   if (nb == -2147483648)
-    {
-      my_printmotherfucker(nb);
-    }
+    my_printmotherfucker();
   while ((nb / spliter) >= 10)
-    {
-      spliter = spliter * 10;
-    }
+    spliter = spliter * 10;
   while (spliter > 0)
     {
       modulo = ((nb / spliter) %10);

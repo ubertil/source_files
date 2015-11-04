@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Fri Oct  9 11:44:36 2015 louis-emile uberti-ares
-** Last update Wed Oct 14 17:24:13 2015 louis-emile uberti-ares
+** Last update Wed Nov  4 11:47:09 2015 louis-emile uberti-ares
 */
 
 int	my_get_sign(char *str)
@@ -15,22 +15,16 @@ int	my_get_sign(char *str)
 
   i = 0;
   sign = 0;
-  while ((str[sign] != '\0') && ( i == 0))
+  while ((str[sign] != '\0') && (i == 0))
     {
       if ((str[sign] >= 48) && (str[sign] <= 57))
-	{
-	  i = i + 1;
-	}
+	i = i + 1;
       sign = sign + 1;
     }
   if (str[sign - 2] == 45)
-    {
-      sign = 2;
-    }
+    sign = 2;
   else
-    {
-      sign = 1;
-    }
+    sign = 1;
   return (sign);
 }
 
@@ -44,24 +38,27 @@ int	my_get_lenght(char *str)
   while (str[i] != '\0')
     {
       if (((str[i] < 48) && (str[i] > 57)) && (lenght == 1))
-	{
-	  i = i + 1;
-	}
+	i = i + 1;
       if ((str[i] >= 48) && (str[i] <= 57))
-	{
-	  lenght = lenght * 10;
-	}
+	lenght = lenght * 10;
       if (((str[i + 1] < 48) || (str[i + 1] > 57)) && (lenght > 1))
-	{
-	  break;
-	}
+	break;
       i = i + 1;
     }
   if (lenght != 1)
-    {
-      lenght = lenght / 10;
-    }
+    lenght = lenght / 10;
   return (lenght);
+}
+
+int	my_disp_sign(char *str, int nb)
+{
+  int	sign;
+
+  sign = my_get_sign(str);
+  if (sign == 2)
+    return (-nb);
+  if (sign == 1)
+    return (nb);
 }
 
 int	my_getnbr(char *str)
@@ -85,19 +82,4 @@ int	my_getnbr(char *str)
       rang = rang + 1;
     }
   my_disp_sign(str, nb);
-}
-
-int	my_disp_sign(char *str, int nb)
-{
-  int	sign;
-
-  sign = my_get_sign(str);
-  if (sign == 2)
-    {
-      return (-nb);
-    }
-  if (sign == 1)
-    {
-      return (nb);
-    }
 }
