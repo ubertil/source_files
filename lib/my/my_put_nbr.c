@@ -5,10 +5,10 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:41:42 2015 louis-emile uberti-ares
-** Last update Wed Nov  4 11:49:28 2015 louis-emile uberti-ares
+** Last update Fri Nov  6 13:59:51 2015 louis-emile uberti-ares
 */
 
-int	my_printmotherfucker(int nb)
+int	my_printmotherfucker()
 {
   my_putchar('-');
   my_putchar('2');
@@ -44,4 +44,5 @@ int	my_put_nbr(int nb)
       spliter = spliter / 10;
       my_putchar(modulo + 48);
     }
+  return (0);
 }

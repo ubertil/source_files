@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Oct 20 09:15:07 2015 louis-emile uberti-ares
-## Last update Wed Nov  4 10:16:46 2015 louis-emile uberti-ares
+## Last update Fri Nov  6 14:01:47 2015 louis-emile uberti-ares
 ##
 
 NAME	= libmy.a
@@ -33,11 +33,11 @@ $(NAME):
 
 clean:
 	$(RM) $(OBJS)
-	$(RM) *~ *#
+	$(RM) *~
 
 fclean: clean
 	$(RM) $(NAME)
 
-re: clean fclean all
+re: fclean all clean
 
 .PHONY: fclean clean all re
