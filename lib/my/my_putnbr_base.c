@@ -5,8 +5,32 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Tue Oct 13 09:32:00 2015 louis-emile uberti-ares
-** Last update Fri Nov  6 14:00:23 2015 louis-emile uberti-ares
+** Last update Tue Nov 10 16:11:26 2015 louis-emile uberti-ares
 */
+
+int	my_putnbr_base_pointer(long long nbr, char *base)
+{
+  if (nbr >= (long long)my_strlen(base))
+    {
+      my_putnbr_base_pointer((nbr / my_strlen(base)), base);
+      my_putnbr_base_pointer((nbr % my_strlen(base)), base);
+    }
+  else
+    my_putchar(base[nbr]);
+   return (0);
+}
+
+int	my_putnbr_base_us(unsigned int nbr, char *base)
+{
+  if (nbr >= (unsigned int)my_strlen(base))
+    {
+      my_putnbr_base_us((nbr / my_strlen(base)), base);
+      my_putnbr_base_us((nbr % my_strlen(base)), base);
+    }
+  else
+    my_putchar(base[nbr]);
+   return (0);
+}
 
 int	my_putnbr_base(int nbr, char *base)
 {
