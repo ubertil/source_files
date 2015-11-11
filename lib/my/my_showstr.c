@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Wed Oct  7 20:46:28 2015 louis-emile uberti-ares
-** Last update Wed Nov 11 22:06:03 2015 louis-emile uberti-ares
+** Last update Wed Nov 11 22:07:00 2015 louis-emile uberti-ares
 */
 
 int	my_putnbr_base(int nbr, char *base);
@@ -25,7 +25,7 @@ int	my_showstr(char *str)
       if (my_str_isprintable(to_verify))
 	{
 	  my_putchar('\\');
-	  if (str[i] < 31)
+	  if (str[idx] < 31)
 	    my_putchar('0');
 	  my_putnbr_base(str[idx], "0123456789abcdef");
 	}
