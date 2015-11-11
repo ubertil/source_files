@@ -5,10 +5,12 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:56:42 2015 louis-emile uberti-ares
-** Last update Wed Oct 14 17:30:40 2015 louis-emile uberti-ares
+** Last update Wed Nov 11 22:03:15 2015 louis-emile uberti-ares
 */
 
-int	my_putstr(char *str)
+void	my_putchar(char c);
+
+void	my_putstr(char *str)
 {
   int	i;
 

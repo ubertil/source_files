@@ -5,22 +5,15 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:41:42 2015 louis-emile uberti-ares
-** Last update Fri Nov  6 13:59:51 2015 louis-emile uberti-ares
+** Last update Wed Nov 11 22:03:02 2015 louis-emile uberti-ares
 */
 
-int	my_printmotherfucker()
+int	my_putstr(char *str);
+void	my_putchar(char c);
+
+void	my_printmotherfucker()
 {
-  my_putchar('-');
-  my_putchar('2');
-  my_putchar('1');
-  my_putchar('4');
-  my_putchar('7');
-  my_putchar('4');
-  my_putchar('8');
-  my_putchar('3');
-  my_putchar('6');
-  my_putchar('4');
-  my_putchar('8');
+  my_putstr("-2147483648");
 }
 
 int	my_put_nbr(int nb)

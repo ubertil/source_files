@@ -5,8 +5,11 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Tue Oct 13 09:32:00 2015 louis-emile uberti-ares
-** Last update Tue Nov 10 16:11:26 2015 louis-emile uberti-ares
+** Last update Wed Nov 11 22:00:46 2015 louis-emile uberti-ares
 */
+
+int	my_strlen(char *str);
+void	my_putchar(char c);
 
 int	my_putnbr_base_pointer(long long nbr, char *base)
 {
