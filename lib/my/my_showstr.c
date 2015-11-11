@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Wed Oct  7 20:46:28 2015 louis-emile uberti-ares
-** Last update Wed Nov 11 22:00:08 2015 louis-emile uberti-ares
+** Last update Wed Nov 11 22:06:03 2015 louis-emile uberti-ares
 */
 
 int	my_putnbr_base(int nbr, char *base);
@@ -32,8 +32,5 @@ int	my_showstr(char *str)
 	else
 	  my_putchar(str[idx]);
 	idx = idx + 1;
-    }
-}
-	}
     }
 }
