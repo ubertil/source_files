@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:57:52 2015 louis-emile uberti-ares
-** Last update Tue Nov 10 16:09:20 2015 louis-emile uberti-ares
+** Last update Tue Nov 10 16:08:44 2015 louis-emile uberti-ares
 */
 
 int	my_strlen(char *str)
@@ -14,6 +14,6 @@ int	my_strlen(char *str)
 
   count = 0;
   while (str[count] != '\0')
-    count = count + 1;
+      count = count + 1;
   return (count);
 }
