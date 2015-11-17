@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Nov  9 17:04:53 2015 louis-emile uberti-ares
-** Last update Thu Nov 12 14:07:02 2015 louis-emile uberti-ares
+** Last update Tue Nov 17 10:01:30 2015 louis-emile uberti-ares
 */
 
 #include <stdarg.h>
@@ -36,8 +36,7 @@ int	my_format_x(va_list list)
 {
   int	count;
 
-  count = 3;
-  my_putstr("0x");
+  count = 1;
   count = my_putnbr_base(va_arg(list, unsigned int), "0123456789abcdef", count);
   return (count);
 }
@@ -46,8 +45,7 @@ int	my_format_X(va_list list)
 {
   int	count;
 
-  count = 3;
-  my_putstr("0x");
+  count = 1;
   count = my_putnbr_base(va_arg(list, unsigned int), "0123456789ABCDEF", count);
   return (count);
 }
