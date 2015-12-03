@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Oct 20 09:15:07 2015 louis-emile uberti-ares
-## Last update Fri Nov  6 14:01:47 2015 louis-emile uberti-ares
+## Last update Thu Dec  3 11:32:53 2015 louis-emile uberti-ares
 ##
 
 NAME	= libmy.a
@@ -16,7 +16,7 @@ SRCS	= *.c
 
 OBJS	= $(SRCS:.c=.o)
 
-CFLAGS	= -Wall
+CFLAGS	= -Wall -Werror -pedantic -ansi
 
 RAN	= ranlib
 
