@@ -5,8 +5,7 @@ Hello everyone !
 
 Here you can find evrything related to my libmy.a project, that every Epitech's student has to carry on during all their first year.
 This is newby stuff so don't judge too harshly !
-Don't be afraid to take a look :)
--
+    Don't be afraid to take a look :)
 Jeune nageur de piscine, si tu veux eviter le -42 github, ferme tes yeux et passe ton chemin
 >*C'est à la norme alors fuck !*"
                               **uberti_l 2015**
@@ -26,5 +25,5 @@ Jeune nageur de piscine, si tu veux eviter le -42 github, ferme tes yeux et pass
 Juju putain :'(
 
 RIP Bistromathique 2015-2015
-RIP BSQ 2015-2015 (pas opti mais si bon...)
-La liste des RIP peut-être longue avec moi...
+    RIP BSQ 2015-2015 (pas opti mais si bon...)
+    La liste des RIP peut-être longue avec moi...
