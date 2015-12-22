@@ -4,40 +4,68 @@
 ## Made by louis-emile uberti-ares
 ## Login   <uberti_l@epitech.net>
 ##
-## Started on  Tue Oct 20 09:15:07 2015 louis-emile uberti-ares
-## Last update Thu Dec  3 11:32:53 2015 louis-emile uberti-ares
+## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
+## Last update Tue Dec 22 12:20:06 2015 louis-emile uberti-ares
 ##
 
-NAME	= libmy.a
+NAME		=	libmy.a
 
-CREATE	= ar rc
+CREATE		=	ar rc
 
-SRCS	= *.c
+SRCS		=	$(wildcard ./src/*.c)
 
-OBJS	= $(SRCS:.c=.o)
+OBJS		=	$(SRCS:.c=.o)
 
-CFLAGS	= -Wall -Werror -pedantic -ansi
+RM		=	rm -f
 
-RAN	= ranlib
+CC		=	cc
 
-RM	= rm -rf
+ERRLOG		=	errors~
 
-CC	= gcc
+DEFAULT         =       "\033[00m"
+GREEN           =       "\033[0;32m"
+BLUE            =       "\033[1;36m"
+RED             =       "\033[0;31m"
+ECHO		=	/bin/echo -e
 
-all: $(NAME)
+RUN		=	ranlib
 
-$(NAME):
-	$(CC) -c $(SRCS) $(CFLAGS)
-	$(CREATE) $(NAME) $(OBJS)
-	$(RAN) $(NAME)
+CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
+
+CREATE		=	ar rc
+
+
+## Compile ---------------------------------------------------------------
+
+all:		title $(NAME)
+
+title:
+		@$(ECHO) $(BLUE)LIB$(RED)MY$(DEFAULT)
+
+$(NAME):	$(OBJS)
+		@$(CREATE) $(NAME) $(OBJS) 2>> $(ERRLOG) && \
+		 $(ECHO) $(GREEN) "[LIB]" $(BLUE) $(NAME) $(DEFAULT) || \
+		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $(NAME)
+		@ranlib $(NAME) && \
+		 $(ECHO) $(GREEN) "[LIB]" $(BLUE) $(NAME) $(DEFAULT) || \
+		 $(ECHO) $(RED) "[ERROR]" $(RED) $(NAME)
+
+.c.o:
+		@$(CC) $(INC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
+		 $(ECHO) $(GREEN) "[OK]" $(BLUE) $< $(DEFAULT) || \
+		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
+
+## Cleaning ---------------------------------------------------------------
 
 clean:
-	$(RM) $(OBJS)
-	$(RM) *~
+		 @$(RM) $(ERRLOG)
+		 @$(RM) $(OBJS) && \
+		  $(ECHO) $(GREEN) "[CLEAN SUCCESS]" $(DEFAULT)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:		 clean
+		 @$(RM) $(NAME) && \
+		  $(ECHO) $(GREEN) "[FCLEAN SUCCESS]" $(DEFAULT)
 
-re: fclean all clean
+re:		 fclean all
 
-.PHONY: fclean clean all re
+.PHONY:		 fclean clean all re
