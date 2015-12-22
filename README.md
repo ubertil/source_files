@@ -21,7 +21,7 @@ This is newby stuff so don't judge too harshly !
 >*"non c'est le contraire"*
 >*"les cornes par le taureau ?!"* **trogno_n aka legéni 2015**
 
->*"J'ai 0 euros frère!"* **rahil_f <3 **
+>*"J'ai 0 euros frère!"* **rahil_f <3**
 
 Juju putain :'(
 
