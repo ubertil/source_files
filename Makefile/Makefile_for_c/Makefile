@@ -5,14 +5,14 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Tue Dec 22 12:25:41 2015 louis-emile uberti-ares
+## Last update Tue Dec 22 12:33:54 2015 louis-emile uberti-ares
 ##
 
-NAME		=	libmy.a
+NAME		=	your_executable
 
-CREATE		=	ar rc
-
-SRCS		=	$(wildcard ./src/*.c)
+SRCS		=	test.c \
+			coucou.c \
+			test2.c
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -28,11 +28,9 @@ BLUE            =       "\033[1;36m"
 RED             =       "\033[0;31m"
 ECHO		=	/bin/echo -e
 
-RUN		=	ranlib
 
 CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
 
-CREATE		=	ar rc
 
 
 ## Compile ---------------------------------------------------------------
@@ -40,15 +38,11 @@ CREATE		=	ar rc
 all:		title $(NAME)
 
 title:
-		@$(ECHO) $(BLUE)LIB$(RED)MY $(GREEN)BY UBERTI_L$(DEFAULT)
+		@$(ECHO) $(BLUE)$(NAME)$(GREEN) BY UBERTI_L$(DEFAULT)
 
 $(NAME):	$(OBJS)
-		@$(CREATE) $(NAME) $(OBJS) 2>> $(ERRLOG) && \
-		 $(ECHO) $(GREEN) "[LIB]" $(BLUE) $(NAME) $(DEFAULT) || \
-		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $(NAME)
-		@ranlib $(NAME) && \
-		 $(ECHO) $(GREEN) "[LIB]" $(BLUE) $(NAME) $(DEFAULT) || \
-		 $(ECHO) $(RED) "[ERROR]" $(RED) $(NAME)
+		@$(CC) -o $(NAME) $(OBJS) && \
+		 $(ECHO) $(GREEN) "[SUCCESS]" $(DEFAULT)
 
 .c.o:
 		@$(CC) $(INC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
@@ -59,6 +53,7 @@ $(NAME):	$(OBJS)
 
 clean:
 		 @$(RM) $(ERRLOG)
+		 @$(RM) *~
 		 @$(RM) $(OBJS) && \
 		  $(ECHO) $(GREEN) "[CLEAN SUCCESS]" $(DEFAULT)
 
