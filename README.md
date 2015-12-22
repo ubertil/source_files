@@ -19,12 +19,13 @@ This is newby stuff so don't judge too harshly !
 
 >*"faut pas prendre le taureau par les cornes"*
 >*"non c'est le contraire"*
->*"les cornes par le taureau ?!"*
-                              **trogno_n aka legéni 2015**
+>*"les cornes par le taureau ?!"* **trogno_n aka legéni 2015**
 >*"J'ai 0 euros frère!"* **rahil_f <3 **
 
 Juju putain :'(
 
 RIP Bistromathique 2015-2015
-    RIP BSQ 2015-2015 (pas opti mais si bon...)
-    La liste des RIP peut-être longue avec moi...
+
+RIP BSQ 2015-2015 (pas opti mais si bon...)
+    
+La liste des RIP peut-être longue avec moi...
