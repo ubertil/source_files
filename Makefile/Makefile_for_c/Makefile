@@ -5,8 +5,10 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Tue Dec 22 12:33:54 2015 louis-emile uberti-ares
+## Last update Fri Dec 25 15:24:11 2015 louis-emile uberti-ares
 ##
+
+## Variables -------------------------------------------------------------
 
 NAME		=	your_executable
 
@@ -30,8 +32,6 @@ ECHO		=	/bin/echo -e
 
 
 CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
-
-
 
 ## Compile ---------------------------------------------------------------
 
@@ -60,6 +60,8 @@ clean:
 fclean:		 clean
 		 @$(RM) $(NAME) && \
 		  $(ECHO) $(GREEN) "[FCLEAN SUCCESS]" $(DEFAULT)
+
+## Tools -----------------------------------------------------------------
 
 re:		 fclean all
 
