@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Fri Dec 25 15:24:11 2015 louis-emile uberti-ares
+## Last update Fri Dec 25 16:08:34 2015 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -19,6 +19,8 @@ SRCS		=	test.c \
 OBJS		=	$(SRCS:.c=.o)
 
 RM		=	rm -f
+
+LIB		=	-lmy -Llib/my
 
 CC		=	cc
 
@@ -45,7 +47,7 @@ $(NAME):	$(OBJS)
 		 $(ECHO) $(GREEN) "[SUCCESS]" $(DEFAULT)
 
 .c.o:
-		@$(CC) $(INC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
+		@$(CC) $(LIB) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
 		 $(ECHO) $(GREEN) "[OK]" $(BLUE) $< $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
 

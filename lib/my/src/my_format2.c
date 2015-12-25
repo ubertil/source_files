@@ -5,13 +5,12 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Nov  9 17:15:42 2015 louis-emile uberti-ares
-** Last update Tue Dec 22 11:19:21 2015 louis-emile uberti-ares
+** Last update Fri Dec 25 16:05:14 2015 louis-emile uberti-ares
 */
 
 #include <stdarg.h>
+#include <stdlib.h>
 #include "include/my.h"
-int	my_putnbr_base(unsigned int nbr, char *base, int count);
-int	my_putnbr_base_p(long nbr, char *base, int count);
 
 int	my_format_b(va_list list)
 {
@@ -32,6 +31,12 @@ int	my_format_s(va_list list)
 {
   int	count;
 
+  if (va_arg(list, char *) == NULL)
+    {
+      my_putstr("(null)\n");
+      count = 7;
+      return (count);
+    }
   count = my_putstr(va_arg(list, char *));
   return (count);
 }
