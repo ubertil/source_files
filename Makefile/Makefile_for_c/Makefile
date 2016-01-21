@@ -5,16 +5,14 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Fri Dec 25 16:08:34 2015 louis-emile uberti-ares
+## Last update Wed Jan  6 12:09:42 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
 
-NAME		=	your_executable
+NAME		=
 
-SRCS		=	test.c \
-			coucou.c \
-			test2.c
+SRCS		=
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -40,10 +38,11 @@ CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
 all:		title $(NAME)
 
 title:
+		@cd lib/my ; make all -f Makefile
 		@$(ECHO) $(BLUE)$(NAME)$(GREEN) BY UBERTI_L$(DEFAULT)
 
 $(NAME):	$(OBJS)
-		@$(CC) -o $(NAME) $(OBJS) && \
+		@$(CC) -o $(NAME) $(OBJS) $(LIB) && \
 		 $(ECHO) $(GREEN) "[SUCCESS]" $(DEFAULT)
 
 .c.o:
@@ -63,8 +62,11 @@ fclean:		 clean
 		 @$(RM) $(NAME) && \
 		  $(ECHO) $(GREEN) "[FCLEAN SUCCESS]" $(DEFAULT)
 
+cleanlib:
+		 @cd lib/my ; make fclean -f Makefile
+
 ## Tools -----------------------------------------------------------------
 
-re:		 fclean all
+re:		 cleanlib fclean all
 
 .PHONY:		 fclean clean all re
