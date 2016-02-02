@@ -67,6 +67,6 @@ cleanlib:
 
 ## Tools -----------------------------------------------------------------
 
-re:		 cleanlib fclean all
+re:		 cleanlib fclean all clean
 
 .PHONY:		 fclean clean all re
