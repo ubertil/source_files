@@ -12,37 +12,25 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Start package.el with emacs
+;; Démarrer package.el avec emacs
 (require 'package)
 
-;; Add MELPA to repository list
+;; Ajout de la source MELPA
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
-;;Initialize package
+;; Initialiser les packages
 (package-initialize)
 
-;; Install auto-complete module
+;; Installer auto-complete module
 (require 'auto-complete)
 (ac-config-default)
 
-;; Install yasnippet
+;; Installer yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
 
-;; Install Flycheck
+;; Installer Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
-;; Ajout de la gestion souris
-(require 'mouse)
-(xterm-mouse-mode t)
-(global-set-key [mouse-4] (lambda ()
-			    (interactive)
-			    (scroll-down 1)))
-(global-set-key [mouse-5] (lambda ()
-			    (interactive)
-			     (scroll-up 1)))
-(defun track-mouse (e))
-(setq mouse-sel-mode)
 
 ;; Suppresion des espaces en fin de ligne à l'enregistrement
 (add-hook'before-save-hook'whitespace-cleanup)

@@ -5,17 +5,15 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:41:42 2015 louis-emile uberti-ares
-** Last update Thu Nov 12 11:32:33 2015 louis-emile uberti-ares
+** Last update Tue Feb  2 16:29:38 2016 louis-emile uberti-ares
 */
 
-int	my_putstr(char *str);
-void	my_putchar(char c);
-int	my_strlen(char *str);
+#include "include/my.h"
 
 int	my_printmotherfucker()
 {
   my_putstr("-2147483648");
-  return(11);
+  return (0);
 }
 
 int	my_put_nbr(int nb)

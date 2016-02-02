@@ -15,6 +15,7 @@ export LD_LIBRARY_PATH="/home/uberti_l/.froot/lib/"
 export C_INCLUDE_PATH="/home/uberti_l/.froot/include/"
 export CPLUS_INCLUDE_PATH="/home/uberti_l/.froot/include/"
 
+alias pogo='ping google.com'
 alias ll='ls -l'
 alias la='ls -la'
 alias lapin='lapin.sh'
@@ -25,9 +26,11 @@ alias ²='xlock -mod blank -geometry 1x1'
 alias ns='ns_auth -v'
 alias push='push_that.sh "$1"'
 alias prepare='prepare_my_repo.sh'
+alias clone='clone'
 alias wpa='wpa_gui'
 alias unzip='unzip_my_tgz.sh'
 alias clear='printf "\033c"'
+alias supervalgrind='valgrind --tool=memcheck --leak-check=yes'
 
 if [ -f ${HOME}/.mybashrc ]
 then
