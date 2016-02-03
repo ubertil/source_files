@@ -12,25 +12,39 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Démarrer package.el avec emacs
+;; Demarrer package.el avec emacs
 (require 'package)
 
-;; Ajout de la source MELPA
+;; Ajout de MELPA à la liste des sources
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
-;; Initialiser les packages
+;; Initialiser les paquets
 (package-initialize)
 
-;; Installer auto-complete module
+;; Installer Auto-complete module
 (require 'auto-complete)
 (ac-config-default)
 
-;; Installer yasnippet
+;; Installer Yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
 
 ;; Installer Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; Installer Nav
+(require 'nav)
+(nav-disable-overeager-window-splitting)
+(global-set-key (kbd "<f8>") 'nav-toggle)
+
+;; Installer Git-Gutter
+(require 'git-gutter)
+(global-git-gutter-mode t)
+
+;; Installer Smartparens
+(require 'smartparens-config)
+(add-hook 'c-mode-hook #'smartparens-mode)
+(add-hook 'sh-mode-hook #'smartparens-mode)
 
 ;; Suppresion des espaces en fin de ligne à l'enregistrement
 (add-hook'before-save-hook'whitespace-cleanup)
