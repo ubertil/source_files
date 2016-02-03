@@ -5,10 +5,9 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Jan  7 20:14:26 2016 louis-emile uberti-ares
-** Last update Mon Jan 18 13:20:43 2016 louis-emile uberti-ares
+** Last update Wed Feb  3 15:35:11 2016 louis-emile uberti-ares
 */
 
-#include "get_next_line.h"
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -89,27 +88,23 @@ char		*clear_buffer(char *buffer)
 
 char		*get_next_line(const int fd)
 {
-  static char	*buffer;
+  char		*buffer;
+  int		ret;
   int		idx;
   char		*str;
 
   if ((str = malloc(READ_SIZE + 1)) == NULL)
     return (NULL);
-  if (buffer == NULL)
-    if ((buffer = malloc(READ_SIZE + 1)) == NULL)
-      return (NULL);
+  if ((buffer = malloc(READ_SIZE + 1)) == NULL)
+    return (NULL);
   str[0] = '\0';
   idx = 0;
-  buffer[READ_SIZE] = '\0';
-  if (find_next_line(buffer) != 0)
-    {
-      buffer = clear_buffer(buffer);
-      str = my_strcpy(str, buffer);
-    }
+  buffer[0] = '\0';
   while (find_next_line(buffer) == 0)
     {
-      if (read(fd, buffer, READ_SIZE) <= 0)
-	return (str);
+      if ((ret = read(fd, buffer, READ_SIZE)) <= 0)
+	return (NULL);
+      buffer[ret] = '\0';
       idx += READ_SIZE;
       str = my_str_realloc(str, buffer, idx);
     }
