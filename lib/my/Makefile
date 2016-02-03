@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Fri Dec 25 15:24:57 2015 louis-emile uberti-ares
+## Last update Wed Feb  3 15:59:49 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -28,7 +28,16 @@ DEFAULT         =       "\033[00m"
 GREEN           =       "\033[0;32m"
 BLUE            =       "\033[1;36m"
 RED             =       "\033[0;31m"
+YELLOW		=	"\033[01;33m"
+
 ECHO		=	/bin/echo -e
+
+LINE1		=	" _   _ ____  _____ ____ _____ ___     _\n"
+LINE2		=	"| | | | __ )| ____|  _ |_   _|_ _|   | |\n"
+LINE3		=	"| | | |  _ \|  _| | |_) || |  | |    | |\n"
+LINE4		=	"| |_| | |_) | |___|  _ < | |  | |    | |___\n"
+LINE5		=	" \___/|____/|_____|_| \_\|_| |___|   |_____|\n"
+LINE6		=	"                               |_____|"
 
 RUN		=	ranlib
 
@@ -42,7 +51,9 @@ CREATE		=	ar rc
 all:		title $(NAME)
 
 title:
-		@$(ECHO) $(BLUE)LIB$(RED)MY $(GREEN)BY UBERTI_L$(DEFAULT)
+		@$(ECHO) $(BLUE)LIB$(RED)MY $(DEFAULT)
+		@$(ECHO) $(GREEN)$(LINE1)$(LINE2)$(LINE3)$(LINE4)$(LINE5) \
+		 $(LINE6) $(DEFAULT)
 
 $(NAME):	$(OBJS)
 		@$(CREATE) $(NAME) $(OBJS) 2>> $(ERRLOG) && \

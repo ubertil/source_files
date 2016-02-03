@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Wed Jan  6 12:09:42 2016 louis-emile uberti-ares
+## Last update Wed Feb  3 16:06:22 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -18,8 +18,6 @@ OBJS		=	$(SRCS:.c=.o)
 
 RM		=	rm -f
 
-LIB		=	-lmy -Llib/my
-
 CC		=	cc
 
 ERRLOG		=	errors~
@@ -28,8 +26,16 @@ DEFAULT         =       "\033[00m"
 GREEN           =       "\033[0;32m"
 BLUE            =       "\033[1;36m"
 RED             =       "\033[0;31m"
-ECHO		=	/bin/echo -e
+YELLOW          =       "\033[01;33m"
 
+ECHO            =       /bin/echo -e
+
+LINE1           =       " _   _ ____  _____ ____ _____ ___     _\n"
+LINE2           =       "| | | | __ )| ____|  _ |_   _|_ _|   | |\n"
+LINE3           =       "| | | |  _ \|  _| | |_) || |  | |    | |\n"
+LINE4           =       "| |_| | |_) | |___|  _ < | |  | |    | |___\n"
+LINE5           =       " \___/|____/|_____|_| \_\|_| |___|   |_____|\n"
+LINE6           =       "                               |_____|"
 
 CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
 
@@ -38,15 +44,17 @@ CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
 all:		title $(NAME)
 
 title:
-		@cd lib/my ; make all -f Makefile
-		@$(ECHO) $(BLUE)$(NAME)$(GREEN) BY UBERTI_L$(DEFAULT)
+		@$(ECHO) $(BLUE)$(NAME)
+		@$(ECHO) $(GREEN)$(LINE1)$(LINE2)$(LINE3)$(LINE4)$(LINE5) \
+		 $(LINE6) $(DEFAULT)
+
 
 $(NAME):	$(OBJS)
-		@$(CC) -o $(NAME) $(OBJS) $(LIB) && \
+		@$(CC) -o $(NAME) $(OBJS) && \
 		 $(ECHO) $(GREEN) "[SUCCESS]" $(DEFAULT)
 
 .c.o:
-		@$(CC) $(LIB) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
+		@$(CC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
 		 $(ECHO) $(GREEN) "[OK]" $(BLUE) $< $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
 
@@ -62,11 +70,8 @@ fclean:		 clean
 		 @$(RM) $(NAME) && \
 		  $(ECHO) $(GREEN) "[FCLEAN SUCCESS]" $(DEFAULT)
 
-cleanlib:
-		 @cd lib/my ; make fclean -f Makefile
-
 ## Tools -----------------------------------------------------------------
 
-re:		 cleanlib fclean all clean
+re:		 fclean all clean
 
 .PHONY:		 fclean clean all re
