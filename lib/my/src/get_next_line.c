@@ -5,14 +5,14 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Jan  7 20:14:26 2016 louis-emile uberti-ares
-** Last update Mon Jan 18 13:20:43 2016 louis-emile uberti-ares
+** Last update Mon Feb  8 16:02:43 2016 louis-emile uberti-ares
 */
 
 #include "get_next_line.h"
 #include <stdlib.h>
 #include <unistd.h>
 
-char		*my_strcpy(char *dest, char *src)
+char		*my_cpy(char *dest, char *src)
 {
   int		i;
   int		j;
@@ -57,8 +57,8 @@ char		*my_str_realloc(char *str, char *buffer, int idx)
   if ((new = malloc(idx + 1)) == NULL)
     return (NULL);
   new[0] = '\0';
-  new = my_strcpy(new, str);
-  new = my_strcpy(new, buffer);
+  new = my_cpy(new, str);
+  new = my_cpy(new, buffer);
   free(str);
   return (new);
 }
@@ -87,7 +87,7 @@ char		*clear_buffer(char *buffer)
   return (new);
 }
 
-char		*get_next_line(const int fd)
+char		*get_shell_line(const int fd)
 {
   static char	*buffer;
   int		idx;
@@ -104,7 +104,7 @@ char		*get_next_line(const int fd)
   if (find_next_line(buffer) != 0)
     {
       buffer = clear_buffer(buffer);
-      str = my_strcpy(str, buffer);
+      str = my_cpy(str, buffer);
     }
   while (find_next_line(buffer) == 0)
     {

@@ -5,13 +5,13 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Jan  7 20:14:26 2016 louis-emile uberti-ares
-** Last update Wed Feb  3 15:35:11 2016 louis-emile uberti-ares
+** Last update Mon Feb  8 16:01:36 2016 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-char		*my_strcpy(char *dest, char *src)
+char		*my_cpy(char *dest, char *src)
 {
   int		i;
   int		j;
@@ -56,8 +56,8 @@ char		*my_str_realloc(char *str, char *buffer, int idx)
   if ((new = malloc(idx + 1)) == NULL)
     return (NULL);
   new[0] = '\0';
-  new = my_strcpy(new, str);
-  new = my_strcpy(new, buffer);
+  new = my_cpy(new, str);
+  new = my_cpy(new, buffer);
   free(str);
   return (new);
 }
@@ -86,7 +86,7 @@ char		*clear_buffer(char *buffer)
   return (new);
 }
 
-char		*get_next_line(const int fd)
+char		*get_shell_line(const int fd)
 {
   char		*buffer;
   int		ret;
@@ -108,5 +108,6 @@ char		*get_next_line(const int fd)
       idx += READ_SIZE;
       str = my_str_realloc(str, buffer, idx);
     }
+  free(buffer);
   return (str);
 }
