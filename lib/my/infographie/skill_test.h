@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Fri Feb  5 14:40:42 2016 louis-emile uberti-ares
-** Last update Fri Feb  5 14:43:33 2016 louis-emile uberti-ares
+** Last update Tue Feb  9 20:26:15 2016 louis-emile uberti-ares
 */
 
 #ifndef SKILL_TEST_H_
