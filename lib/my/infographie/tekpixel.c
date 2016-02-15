@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Tue Nov 10 10:09:19 2015 louis-emile uberti-ares
-** Last update Tue Feb  9 19:35:32 2016 louis-emile uberti-ares
+** Last update Mon Feb 15 11:37:12 2016 louis-emile uberti-ares
 */
 
 #include <lapin.h>
@@ -17,5 +17,5 @@ void			tekpixel(t_bunny_pixelarray *pix,
   unsigned int		*my_putpixel;
 
   my_putpixel = (unsigned int *)pix->pixels;
-  my_putpixel[pos->x + (pos->y * pix->clipable.clip_width)] = color;
+  my_putpixel[pos->x + (pos->y * pix->clipable.buffer.width)] = color;
 }
