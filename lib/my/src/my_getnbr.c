@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Fri Oct  9 11:44:36 2015 louis-emile uberti-ares
-** Last update Mon Feb 15 13:24:02 2016 louis-emile uberti-ares
+** Last update Mon Mar 21 15:02:50 2016 Louis-Emile Uberti
 */
 
 int	my_get_lenght(char *str)
@@ -44,5 +44,7 @@ int	my_getnbr(char *str)
 	}
       rang = rang + 1;
     }
+  if (str[0] == '-')
+    return (-nb);
   return (nb);
 }

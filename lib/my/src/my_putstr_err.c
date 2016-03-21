@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Sat Dec 12 08:11:29 2015 louis-emile uberti-ares
-** Last update Sat Dec 12 08:12:53 2015 louis-emile uberti-ares
+** Last update Mon Mar 21 12:53:25 2016 Louis-Emile Uberti
 */
 
 #include <unistd.h>
@@ -21,8 +21,5 @@ void	my_putstr_err(char *str)
 
   i = 0;
   while (str[i] != '\0')
-    {
-      err_putchar(str[i]);
-      i += 1;
-    }
+    err_putchar(str[i++]);
 }
