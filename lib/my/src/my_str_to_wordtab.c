@@ -6,7 +6,7 @@
 **
 ** Started on  Tue Jan 19 22:18:50 2016 louis-emile uberti-ares
 <<<<<<< HEAD
-** Last update Sun Mar 27 01:37:47 2016 louis-emile uberti-ares
+** Last update Sun Mar 27 17:10:47 2016 louis-emile uberti-ares
 =======
 ** Last update Mon Mar 21 16:44:39 2016 Louis-Emile Uberti
 >>>>>>> 6162f7a51805b01874a25b2a1091a1f563a7c85d
@@ -14,6 +14,26 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+
+int		nbwords(char *str)
+{
+  int		i;
+  int		nb_words;
+
+  i = 0;
+  nb_words = 0;
+  while (str[i] != '\0')
+    {
+      while (str[i] == ' ' || str[i] == '\t')
+	i += 1;
+      while (str[i] != ' ' && str[i] != '\t' && str[i] != '\0')
+	i += 1;
+      while (str[i] == ' ' || str[i] == '\t')
+	i += 1;
+      nb_words += 1;
+    }
+  return (nb_words);
+}
 
 int		*get_lenght(char *str, int *lenght)
 {
@@ -32,6 +52,8 @@ int		*get_lenght(char *str, int *lenght)
 	  lenght[idx] += 1;
 	  i += 1;
 	}
+      while (str[i] == ' ' || str[i] == '\t')
+	i += 1;
       idx += 1;
     }
   return (lenght);
@@ -66,6 +88,8 @@ char		**get_tab(char **tab, char *str, int i)
   while (str[i] != '\0')
     {
       j = 0;
+      while (str[i] == ' ' || str[i] == '\t')
+	i += 1;
       while (str[i] != ' ' && str[i] != '\t' && str[i] != '\0')
 	{
 	  tab[idx][j++] = str[i];
@@ -73,7 +97,7 @@ char		**get_tab(char **tab, char *str, int i)
 	}
       while (str[i] == ' ' || str[i] == '\t')
 	i += 1;
-      (str[i] != ' ' && str[i] != '\t') ? (idx += 1) : (0);
+      idx += 1;
     }
   return (tab);
 }
@@ -86,17 +110,7 @@ char		**my_str_to_wordtab(char *str)
   int		nb_words;
 
   i = 0;
-  nb_words = 1;
-  while (str[i] != '\0')
-    {
-      while (str[i] == ' ' || str[i] == '\t')
-	{
-	  i += 1;
-	  if (str[i] != ' ' && str[i] != '\t')
-	    nb_words += 1;
-	}
-      i += 1;
-    }
+  nb_words = nbwords(str);
   if (((tab = malloc(sizeof(char *) * (nb_words + 1))) == NULL) ||
       ((lenght = malloc(sizeof(int) * nb_words)) == NULL))
     exit(84);
