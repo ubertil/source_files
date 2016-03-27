@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Jan  7 20:14:26 2016 louis-emile uberti-ares
-** Last update Mon Feb  8 16:02:43 2016 louis-emile uberti-ares
+** Last update Wed Mar  2 11:46:50 2016 louis-emile uberti-ares
 */
 
 #include "get_next_line.h"
@@ -109,7 +109,7 @@ char		*get_shell_line(const int fd)
   while (find_next_line(buffer) == 0)
     {
       if (read(fd, buffer, READ_SIZE) <= 0)
-	return (str);
+	return (NULL);
       idx += READ_SIZE;
       str = my_str_realloc(str, buffer, idx);
     }

@@ -41,11 +41,6 @@
 (require 'git-gutter)
 (global-git-gutter-mode t)
 
-;; Installer Smartparens
-(require 'smartparens-config)
-(add-hook 'c-mode-hook #'smartparens-mode)
-(add-hook 'sh-mode-hook #'smartparens-mode)
-
 ;; Suppresion des espaces en fin de ligne à l'enregistrement
 (add-hook'before-save-hook'whitespace-cleanup)
 

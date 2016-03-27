@@ -5,10 +5,10 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Oct  5 09:35:33 2015 louis-emile uberti-ares
-** Last update Mon Feb  1 12:11:46 2016 louis-emile uberti-ares
+** Last update Sun Mar 27 00:09:40 2016 louis-emile uberti-ares
 */
 
-#include "include/my.h"
+#include <stdlib.h>
 
 char	*my_strcpy(char *dest, char *src)
 {
@@ -18,11 +18,7 @@ char	*my_strcpy(char *dest, char *src)
   count = my_strlen(dest);
   i = 0;
   while (src[i] != '\0')
-    {
-      dest[count] = src[i];
-      count = count + 1;
-      i = i + 1;
-    }
+    dest[count++] = src[i++];
   dest[count] = '\0';
   return (dest);
 }

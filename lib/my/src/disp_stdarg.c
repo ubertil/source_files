@@ -5,14 +5,10 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Wed Nov  4 11:33:38 2015 louis-emile uberti-ares
-** Last update Sat Dec 12 08:11:12 2015 louis-emile uberti-ares
+** Last update Sat Mar 26 23:48:25 2016 louis-emile uberti-ares
 */
 
 #include <stdarg.h>
-
-void		my_putchar(char c);
-int		my_putstr(char *str);
-int		my_put_nbr(int nbr);
 
 int		disp_stdarg(char *s, ...)
 {

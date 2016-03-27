@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Wed Oct  7 13:21:16 2015 louis-emile uberti-ares
-** Last update Tue Dec 22 11:21:22 2015 louis-emile uberti-ares
+** Last update Sat Mar 26 23:59:57 2016 louis-emile uberti-ares
 */
 
 #include "include/my.h"
@@ -18,7 +18,7 @@ int	my_rev_params(int argc, char **argv)
   while (i < argc)
     {
       my_putstr(argv[argc - i - 1]);
-      i = i + 1;
+      i += 1;
       my_putchar('\n');
     }
   return (0);

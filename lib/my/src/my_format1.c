@@ -5,15 +5,10 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Nov  9 17:04:53 2015 louis-emile uberti-ares
-** Last update Tue Nov 17 10:01:30 2015 louis-emile uberti-ares
+** Last update Sat Mar 26 23:51:05 2016 louis-emile uberti-ares
 */
 
 #include <stdarg.h>
-
-int	my_put_nbr(int nb);
-int	my_putstr(char *str);
-int	my_putnbr_base(unsigned int nbr, char *base, int count);
-int	my_put_nbr_us(unsigned int nbr);
 
 int	my_format_di(va_list list)
 {

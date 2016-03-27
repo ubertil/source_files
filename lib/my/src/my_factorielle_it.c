@@ -5,7 +5,7 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Fri Oct  2 09:50:22 2015 louis-emile uberti-ares
-** Last update Wed Nov  4 11:42:44 2015 louis-emile uberti-ares
+** Last update Sat Mar 26 23:50:10 2016 louis-emile uberti-ares
 */
 
 int	my_factorielle_int(int nb)
@@ -21,8 +21,8 @@ int	my_factorielle_int(int nb)
     return (1);
   while (i > 1)
     {
-      result = result * i;
-      i = i - 1;
+      result *= i;
+      i -= 1;
     }
   return (result);
 }

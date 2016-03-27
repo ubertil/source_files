@@ -5,43 +5,30 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:41:42 2015 louis-emile uberti-ares
-** Last update Tue Feb  2 16:29:38 2016 louis-emile uberti-ares
+** Last update Sat Mar 26 23:59:12 2016 louis-emile uberti-ares
 */
 
-#include "include/my.h"
+#include <unistd.h>
 
-int	my_printmotherfucker()
-{
-  my_putstr("-2147483648");
-  return (0);
-}
-
-int	my_put_nbr(int nb)
+void	my_put_nbr(int nb)
 {
   int	modulo;
   int	spliter;
-  int	count;
 
   spliter = 1;
-  count = 0;
-  if ((nb < 0) && (nb != -2147483648))
+  if (nb < 0)
     {
-      my_putchar('-');
-      nb = nb * -1;
-      count = count + 1;
+      write(1, "-", 1);
+      nb *= -1;
     }
-  if (nb == -2147483648)
-    my_printmotherfucker();
   while ((nb / spliter) >= 10)
-    spliter = spliter * 10;
+    spliter *= 10;
   while (spliter > 0)
     {
-      count = count + 1;
       modulo = ((nb / spliter) %10);
-      spliter = spliter / 10;
+      spliter /= 10;
       my_putchar(modulo + 48);
     }
-  return (count);
 }
 
 int	my_put_nbr_us(unsigned int nb)

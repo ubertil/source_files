@@ -5,23 +5,16 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:56:42 2015 louis-emile uberti-ares
-** Last update Thu Nov 12 11:43:04 2015 louis-emile uberti-ares
+** Last update Sat Mar 26 23:53:37 2016 louis-emile uberti-ares
 */
 
-void	my_putchar(char c);
+#include <unistd.h>
 
-int	my_putstr(char *str)
+void	my_putstr(char *str)
 {
   int	i;
-  int	count;
 
   i = 0;
-  count = 0;
   while (str[i] != '\0')
-    {
-      my_putchar(str[i]);
-      i = i + 1;
-      count = count + 1;
-    }
-  return (count);
+    write(1, &str[i++], 1);
 }

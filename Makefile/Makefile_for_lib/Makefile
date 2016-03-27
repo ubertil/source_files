@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Fri Dec 25 15:24:57 2015 louis-emile uberti-ares
+## Last update Sun Mar 27 01:44:24 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -14,7 +14,7 @@ NAME		=	libmy.a
 
 CREATE		=	ar rc
 
-SRCS		=	$(wildcard ./src/*.c)
+SRCS		=
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -32,7 +32,7 @@ ECHO		=	/bin/echo -e
 
 RUN		=	ranlib
 
-CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
+CFLAGS		+=	-W -Wall -Werror -Wextra -ansi -pedantic
 
 CREATE		=	ar rc
 
@@ -42,6 +42,7 @@ CREATE		=	ar rc
 all:		title $(NAME)
 
 title:
+		@$(ECHO) "Compiled with" "$(CFLAGS)"
 		@$(ECHO) $(BLUE)LIB$(RED)MY $(GREEN)BY UBERTI_L$(DEFAULT)
 
 $(NAME):	$(OBJS)

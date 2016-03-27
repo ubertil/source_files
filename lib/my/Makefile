@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Wed Feb  3 15:59:49 2016 louis-emile uberti-ares
+## Last update Sun Mar 27 01:41:52 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -41,7 +41,7 @@ LINE6		=	"                               |_____|"
 
 RUN		=	ranlib
 
-CFLAGS		=	-W -Wall -Werror -Wextra -ansi -pedantic
+CFLAGS		+=	-W -Wall -Werror -Wextra -ansi -pedantic
 
 CREATE		=	ar rc
 
@@ -51,6 +51,7 @@ CREATE		=	ar rc
 all:		title $(NAME)
 
 title:
+		@$(ECHO) "Compiled with" "$(CFLAGS)"
 		@$(ECHO) $(BLUE)LIB$(RED)MY $(DEFAULT)
 		@$(ECHO) $(GREEN)$(LINE1)$(LINE2)$(LINE3)$(LINE4)$(LINE5) \
 		 $(LINE6) $(DEFAULT)
@@ -60,8 +61,8 @@ $(NAME):	$(OBJS)
 		 $(ECHO) $(GREEN) "[LIB]" $(BLUE) $(NAME) $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $(NAME)
 		@ranlib $(NAME) && \
-		 $(ECHO) $(GREEN) "[LIB]" $(BLUE) $(NAME) $(DEFAULT) || \
-		 $(ECHO) $(RED) "[ERROR]" $(RED) $(NAME)
+		 $(ECHO) $(GREEN) "[CREATED]" $(BLUE) $(NAME) $(DEFAULT) || \
+		 $(ECHO) $(RED) "[LIB FAILED] " $(RED) $(NAME)
 
 .c.o:
 		@$(CC) $(INC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
