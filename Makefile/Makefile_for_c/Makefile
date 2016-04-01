@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Sat Mar 26 23:44:53 2016 louis-emile uberti-ares
+## Last update Fri Apr  1 13:16:12 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -37,7 +37,7 @@ LINE4           =       "| |_| | |_) | |___|  _ < | |  | |    | |___\n"
 LINE5           =       " \___/|____/|_____|_| \_\|_| |___|   |_____|\n"
 LINE6           =       "                               |_____|"
 
-CFLAGS		+=	-W -Wall -Werror -Wextra -ansi -pedantic
+CFLAGS		+=	-W -Wall -Werror -Wextra
 
 ## Compile ---------------------------------------------------------------
 
@@ -52,7 +52,7 @@ title:
 
 $(NAME):	$(OBJS)
 		@$(CC) -o $(NAME) $(OBJS) && \
-		 $(ECHO) $(GREEN) "[SUCCESS]" $(DEFAULT)
+		 $(ECHO) $(GREEN) "[BINARY COMPILED]" $(DEFAULT)
 
 .c.o:
 		@$(CC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
