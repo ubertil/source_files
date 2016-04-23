@@ -5,20 +5,21 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Mon Apr  4 14:58:47 2016 louis-emile uberti-ares
+## Last update Thu Apr 14 10:09:18 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
 
-NAME		=
+NAME		=	libmy.so
 
-SRCS		=
+SRCS		=	my_putchar.c \
 
 OBJS		=	$(SRCS:.c=.o)
 
 RM		=	rm -f
 
-CC		=	cc
+CC1		=	gcc -c -fPIC
+CC2		=	gcc -shared
 
 ERRLOG		=	errors~
 
@@ -37,7 +38,7 @@ LINE4           =       "| |_| | |_) | |___|  _ < | |  | |    | |___\n"
 LINE5           =       " \___/|____/|_____|_| \_\|_| |___|   |_____|\n"
 LINE6           =       "                               |_____|"
 
-CFLAGS		+=	-W -Wall -Werror -Wextra -I./include
+CFLAGS		+=	-W -Wall -Werror -Wextra
 
 ## Compile ---------------------------------------------------------------
 
@@ -51,11 +52,11 @@ title:
 
 
 $(NAME):	$(OBJS)
-		@$(CC) -o $(NAME) $(OBJS) && \
-		 $(ECHO) $(GREEN) "[BINARY COMPILED]" $(DEFAULT)
+		@$(CC2) -o $(NAME) $(OBJS) && \
+		 $(ECHO) $(GREEN) "[.SO BUILT]" $(DEFAULT)
 
 .c.o:
-		@$(CC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
+		@$(CC1) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
 		 $(ECHO) $(GREEN) "[OK]" $(BLUE) $< $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
 

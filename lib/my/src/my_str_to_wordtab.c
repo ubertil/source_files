@@ -6,7 +6,7 @@
 **
 ** Started on  Tue Jan 19 22:18:50 2016 louis-emile uberti-ares
 <<<<<<< HEAD
-** Last update Sun Mar 27 17:10:47 2016 louis-emile uberti-ares
+** Last update Thu Apr 14 13:46:47 2016 louis-emile uberti-ares
 =======
 ** Last update Mon Mar 21 16:44:39 2016 Louis-Emile Uberti
 >>>>>>> 6162f7a51805b01874a25b2a1091a1f563a7c85d
@@ -110,6 +110,8 @@ char		**my_str_to_wordtab(char *str)
   int		nb_words;
 
   i = 0;
+  if (str == NULL)
+    return (NULL);
   nb_words = nbwords(str);
   if (((tab = malloc(sizeof(char *) * (nb_words + 1))) == NULL) ||
       ((lenght = malloc(sizeof(int) * nb_words)) == NULL))

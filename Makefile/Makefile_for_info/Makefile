@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Sun Mar 27 01:43:10 2016 louis-emile uberti-ares
+## Last update Sat Apr 23 14:33:52 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -20,10 +20,10 @@ RM		=	rm -f
 
 CC		=	cc
 
-LIB		=	-l/home/$(USER)/.froot/include
-LIB		+=	-L/home/$(USER)/.froot/lib
-LIB		+=	-llapin -lsfml-audio -lsfml-graphics -lsfml-window
-LIB		+=	-lsfml-system -lstdc++ -ldl -lm
+LIB		=	-L/home/$(USER)/.froot/include \
+			-L/home/$(USER)/.froot/lib \
+			-llapin -lsfml-audio -lsfml-graphics -lsfml-window \
+			-lsfml-system -lstdc++ -ldl -lm
 
 ERRLOG		=	errors~
 
@@ -35,29 +35,23 @@ YELLOW          =       "\033[01;33m"
 
 ECHO            =       /bin/echo -e
 
-LINE1           =       " _   _ ____  _____ ____ _____ ___     _\n"
-LINE2           =       "| | | | __ )| ____|  _ |_   _|_ _|   | |\n"
-LINE3           =       "| | | |  _ \|  _| | |_) || |  | |    | |\n"
-LINE4           =       "| |_| | |_) | |___|  _ < | |  | |    | |___\n"
-LINE5           =       " \___/|____/|_____|_| \_\|_| |___|   |_____|\n"
-LINE6           =       "                               |_____|"
+CONTRIBUTORS	=	"by Uberti_l"
 
-CFLAGS		+=	-W -Wall -Werror
+CFLAGS		+=	-W -Wall -Werror -I./include
 
 ## Compile ---------------------------------------------------------------
 
 all:		title $(NAME)
 
 title:
-		@$(ECHO) "Compiled with" "$(CFLAGS)"
 		@$(ECHO) $(BLUE)$(NAME)
-		@$(ECHO) $(GREEN)$(LINE1)$(LINE2)$(LINE3)$(LINE4)$(LINE5) \
-		 $(LINE6) $(DEFAULT)
+		@$(ECHO) $(RED)$(CONTRIBUTORS) $(DEFAULT)
+		@$(ECHO) $(BLUE)"Compiled with" "$(CFLAGS)"$(DEFAULT)
 
 
 $(NAME):	$(OBJS)
 		@$(CC) -o $(NAME) $(OBJS) $(LIB) && \
-		 $(ECHO) $(GREEN) "[SUCCESS]" $(DEFAULT)
+		 $(ECHO) $(GREEN) "[BINARY COMPILED]" $(DEFAULT)
 
 .c.o:
 		@$(CC) $(LIB) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
@@ -68,7 +62,6 @@ $(NAME):	$(OBJS)
 
 clean:
 		 @$(RM) $(ERRLOG)
-		 @$(RM) *~
 		 @$(RM) $(OBJS) && \
 		  $(ECHO) $(GREEN) "[CLEAN SUCCESS]" $(DEFAULT)
 
