@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Sat Apr 23 14:33:52 2016 louis-emile uberti-ares
+## Last update Sat Apr 23 14:39:38 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -54,6 +54,7 @@ $(NAME):	$(OBJS)
 		 $(ECHO) $(GREEN) "[BINARY COMPILED]" $(DEFAULT)
 
 .c.o:
+		@$(ECHO) $(GREEN) "OBJECT .o COMPILATION" $(DEFAULT)
 		@$(CC) $(LIB) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
 		 $(ECHO) $(GREEN) "[OK]" $(BLUE) $< $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
