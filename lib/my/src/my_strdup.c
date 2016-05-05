@@ -5,12 +5,12 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Wed Oct  7 09:20:24 2015 louis-emile uberti-ares
-** Last update Sun Mar 27 00:14:41 2016 louis-emile uberti-ares
+** Last update Thu May  5 14:54:53 2016 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
 
-char	*my_strdup(char *src)
+char	*my_strdup(const char *src)
 {
   int	i;
   char	*dest;

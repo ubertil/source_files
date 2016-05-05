@@ -5,109 +5,94 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Jan  7 20:14:26 2016 louis-emile uberti-ares
-** Last update Mon Feb  8 16:01:36 2016 louis-emile uberti-ares
+** Last update Thu May  5 14:52:21 2016 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-char		*my_cpy(char *dest, char *src)
+static int	my_strlen(const char *str)
+{
+  int		i;
+
+  i = 0;
+  while (*str)
+    {
+      str++;
+      ++i;
+    }
+  return (i);
+}
+
+static char	*my_cpy(char *dest, const char *src)
 {
   int		i;
   int		j;
 
-  j = 0;
+  j = -1;
   i = 0;
   while (dest[i] != '\0')
-    i += 1;
-  while (src[j] != '\0')
+    ++i;
+  while (src[++j] != '\0')
     {
-      if (src[j] == '\n')
-	{
-	  dest[i] = '\0';
-	  return (dest);
-	}
       dest[i] = src[j];
-      i += 1;
-      j += 1;
+      ++i;
     }
   dest[i] = '\0';
   return (dest);
 }
 
-int		find_next_line(char *buffer)
+static int		find_next_line(char *str)
 {
-  int		i;
+  int			i;
 
-  i = 0;
-  while (buffer[i] != '\0')
-    {
-      if (buffer[i] == '\n')
-	return (i + 1);
-      i += 1;
-    }
-  return (0);
+  i = -1;
+  while (str[++i] != '\0')
+    if (str[i] == '\n')
+      {
+	str[i] = '\0';
+	return (i);
+      }
+  return (-1);
 }
 
-char		*my_str_realloc(char *str, char *buffer, int idx)
+static char		*my_str_realloc(char *str, const char **buffer)
 {
-  char		*new;
+  char			*new;
 
-  if ((new = malloc(idx + 1)) == NULL)
+  if ((new = malloc(sizeof(char) *
+		    (my_strlen(str) + my_strlen(*buffer) + 1))) == NULL)
     return (NULL);
   new[0] = '\0';
   new = my_cpy(new, str);
-  new = my_cpy(new, buffer);
+  new = my_cpy(new, *buffer);
   free(str);
-  return (new);
-}
-
-char		*clear_buffer(char *buffer)
-{
-  char		*new;
-  int		i;
-  int		j;
-
-  if ((new = malloc(READ_SIZE + 1)) == NULL)
-    return (NULL);
-  i = 0;
-  j = 0;
-  while (buffer[i] != '\n')
-    i += 1;
-  i += 1;
-  while (buffer[i] != '\0')
-    {
-      new[j] = buffer[i];
-      i += 1;
-      j += 1;
-    }
-  new[j] = '\0';
-  free(buffer);
   return (new);
 }
 
 char		*get_shell_line(const int fd)
 {
   char		*buffer;
-  int		ret;
-  int		idx;
   char		*str;
+  int		ret;
 
-  if ((str = malloc(READ_SIZE + 1)) == NULL)
+  if (((str = malloc(2)) == NULL) ||
+      ((buffer = malloc(2)) == NULL))
     return (NULL);
-  if ((buffer = malloc(READ_SIZE + 1)) == NULL)
-    return (NULL);
-  str[0] = '\0';
-  idx = 0;
   buffer[0] = '\0';
-  while (find_next_line(buffer) == 0)
+  str[0] = '\0';
+  while ((ret = read(fd, buffer, 1)) > 0)
     {
-      if ((ret = read(fd, buffer, READ_SIZE)) <= 0)
-	return (NULL);
       buffer[ret] = '\0';
-      idx += READ_SIZE;
-      str = my_str_realloc(str, buffer, idx);
+      if ((str = my_str_realloc(str, &buffer)) == NULL)
+	return (NULL);
+      if (find_next_line(str) != -1)
+	{
+	  free(buffer);
+	  return (str);
+	}
     }
   free(buffer);
-  return (str);
+  free(str);
+  return (NULL);
 }

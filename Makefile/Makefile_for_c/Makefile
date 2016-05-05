@@ -5,7 +5,7 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Sat Apr 23 14:40:29 2016 louis-emile uberti-ares
+## Last update Mon Apr 25 14:43:06 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
@@ -30,12 +30,7 @@ YELLOW          =       "\033[01;33m"
 
 ECHO            =       /bin/echo -e
 
-LINE1           =       " _   _ ____  _____ ____ _____ ___     _\n"
-LINE2           =       "| | | | __ )| ____|  _ |_   _|_ _|   | |\n"
-LINE3           =       "| | | |  _ \|  _| | |_) || |  | |    | |\n"
-LINE4           =       "| |_| | |_) | |___|  _ < | |  | |    | |___\n"
-LINE5           =       " \___/|____/|_____|_| \_\|_| |___|   |_____|\n"
-LINE6           =       "                               |_____|"
+CONTRIBUTORS	=	"by Come GRELLARD and Louis-Emile UBERTI"
 
 CFLAGS		+=	-W -Wall -Werror -Wextra -I./include
 
@@ -45,9 +40,8 @@ all:		title $(NAME)
 
 title:
 		@$(ECHO) $(BLUE)$(NAME)
-		@$(ECHO) "Compiled with" "$(CFLAGS)"
-		@$(ECHO) $(GREEN)$(LINE1)$(LINE2)$(LINE3)$(LINE4)$(LINE5) \
-		 $(LINE6) $(DEFAULT)
+		@$(ECHO) $(RED)$(CONTRIBUTORS) $(DEFAULT)
+		@$(ECHO) $(BLUE)"Compiled with" "$(CFLAGS)" $(DEFAULT)
 
 
 $(NAME):	$(OBJS)
@@ -55,16 +49,14 @@ $(NAME):	$(OBJS)
 		 $(ECHO) $(GREEN) "[BINARY COMPILED]" $(DEFAULT)
 
 .c.o:
-		@$(ECHO) $(GREEN)"OBJECT FILES COMPILATION..."$(DEFAULT)
 		@$(CC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
-		 $(ECHO) $(GREEN) "[OK]" $(BLUE) $< $(DEFAULT) || \
+		 $(ECHO) $(GREEN) "[.o OK]" $(BLUE) $< $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
 
 ## Cleaning ---------------------------------------------------------------
 
 clean:
 		 @$(RM) $(ERRLOG)
-		 @$(RM) *~
 		 @$(RM) $(OBJS) && \
 		  $(ECHO) $(GREEN) "[CLEAN SUCCESS]" $(DEFAULT)
 

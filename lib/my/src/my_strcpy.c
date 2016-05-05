@@ -5,12 +5,12 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Mon Oct  5 09:35:33 2015 louis-emile uberti-ares
-** Last update Sun Mar 27 00:09:40 2016 louis-emile uberti-ares
+** Last update Thu May  5 14:55:34 2016 louis-emile uberti-ares
 */
 
 #include <stdlib.h>
 
-char	*my_strcpy(char *dest, char *src)
+char	*my_strcpy(char *dest, const char *src)
 {
   int	i;
   int	count;

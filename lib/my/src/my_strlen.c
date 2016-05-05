@@ -5,17 +5,19 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Thu Oct  1 09:57:52 2015 louis-emile uberti-ares
-** Last update Sun Mar 27 00:10:52 2016 louis-emile uberti-ares
+** Last update Thu May  5 14:51:21 2016 louis-emile uberti-ares
 */
 
-int	my_strlen(char *str)
-{
-  int	count;
+#include <stdlib.h>
 
-  count = 0;
-  if (str == 0)
-    return (0);
-  while (str[count] != '\0')
-      count += 1;
-  return (count);
+int	my_strlen(const char *str)
+{
+  int	i;
+
+  i = 0;
+  if (str == NULL)
+    return (-1);
+  while (str[i] != '\0')
+    ++i;
+  return (i);
 }

@@ -5,20 +5,14 @@
 ** Login   <uberti_l@epitech.net>
 **
 ** Started on  Sat Dec 12 08:11:29 2015 louis-emile uberti-ares
-<<<<<<< HEAD:lib/my/src/my_puterr.c
-** Last update Sat Apr 23 14:34:57 2016 louis-emile uberti-ares
-=======
-** Last update Mon Mar 21 12:53:25 2016 Louis-Emile Uberti
->>>>>>> 6162f7a51805b01874a25b2a1091a1f563a7c85d:lib/my/src/my_putstr_err.c
+** Last update Thu May  5 14:53:28 2016 louis-emile uberti-ares
 */
 
 #include <unistd.h>
 
-void	my_puterr(char *str)
+int	my_puterr(const char *str)
 {
-  int	i;
-
-  i = 0;
-  while (str[i] != '\0')
-    write(2, &str[i++], 1);
+  while (*str)
+    write(2, str++, 1);
+  return (-1);
 }
