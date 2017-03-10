@@ -30,7 +30,7 @@ int	my_putnbr_base_pointer(long nbr, char *base)
 
 int	my_putnbr_base_us(unsigned int nbr, char *base)
 {
-  int	count;
+  int count;
 
   count = 0;
   if (nbr >= (unsigned int)my_strlen(base))

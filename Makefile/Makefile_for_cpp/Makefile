@@ -5,27 +5,20 @@
 ## Login   <uberti_l@epitech.net>
 ##
 ## Started on  Tue Dec 22 11:52:18 2015 louis-emile uberti-ares
-## Last update Sat Apr 23 14:39:38 2016 louis-emile uberti-ares
+## Last update Mon Apr 25 14:43:06 2016 louis-emile uberti-ares
 ##
 
 ## Variables -------------------------------------------------------------
 
-NAME		=
+NAME		=	a.out
 
-SRCS		=
+SRCS		=	srcs/main.c \
 
 OBJS		=	$(SRCS:.c=.o)
 
 RM		=	rm -f
 
-CC		=	cc
-
-LIB		=	-L/home/$(USER)/.froot/include \
-			-L/home/$(USER)/.froot/lib \
-			-llapin -lsfml-audio -lsfml-graphics -lsfml-window \
-			-lsfml-system -lstdc++ -ldl -lm
-
-ERRLOG		=	errors~
+CC		=	g++
 
 DEFAULT         =       "\033[00m"
 GREEN           =       "\033[0;32m"
@@ -35,9 +28,9 @@ YELLOW          =       "\033[01;33m"
 
 ECHO            =       /bin/echo -e
 
-CONTRIBUTORS	=	"by Uberti_l"
+CONTRIBUTORS	=	"by Louis-Emile UBERTI"
 
-CFLAGS		+=	-W -Wall -Werror -I./include
+CXXFLAGS	+=	-W -Wall -Werror -Wextra -I./include
 
 ## Compile ---------------------------------------------------------------
 
@@ -46,23 +39,21 @@ all:		title $(NAME)
 title:
 		@$(ECHO) $(BLUE)$(NAME)
 		@$(ECHO) $(RED)$(CONTRIBUTORS) $(DEFAULT)
-		@$(ECHO) $(BLUE)"Compiled with" "$(CFLAGS)"$(DEFAULT)
+		@$(ECHO) $(BLUE)"Compiled with" "$(CXXFLAGS)" $(DEFAULT)
 
 
 $(NAME):	$(OBJS)
-		@$(CC) -o $(NAME) $(OBJS) $(LIB) && \
-		 $(ECHO) $(GREEN) "[BINARY COMPILED]" $(DEFAULT)
+		@$(CC) -o $(NAME) $(OBJS) && \
+		 $(ECHO) $(GREEN) "["$(NAME)" COMPILED]" $(DEFAULT)
 
 .c.o:
-		@$(ECHO) $(GREEN) "OBJECT .o COMPILATION" $(DEFAULT)
-		@$(CC) $(LIB) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
-		 $(ECHO) $(GREEN) "[OK]" $(BLUE) $< $(DEFAULT) || \
+		@$(CC) $(CXXFLAGS) -c $< -o $@ && \
+		 $(ECHO) $(GREEN) "[.o OK]" $(BLUE) $< $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
 
 ## Cleaning ---------------------------------------------------------------
 
 clean:
-		 @$(RM) $(ERRLOG)
 		 @$(RM) $(OBJS) && \
 		  $(ECHO) $(GREEN) "[CLEAN SUCCESS]" $(DEFAULT)
 

@@ -5,12 +5,15 @@
 
 (add-to-list 'load-path "~/.emacs.d/")
 
-(load "std.el")
-(load "std_comment.el")
+;;(load "std.el")
+;;(load "std_comment.el")
 (if (file-exists-p "~/.myemacs")
     (load-file "~/.myemacs"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Pour MAC Seulement
+(global-set-key (kbd "TAB") 'self-insert-command);
 
 ;; Demarrer package.el avec emacs
 (require 'package)
@@ -38,8 +41,8 @@
 (global-set-key (kbd "<f8>") 'nav-toggle)
 
 ;; Installer Git-Gutter
-(require 'git-gutter)
-(global-git-gutter-mode t)
+;;(require 'git-gutter)
+;;(global-git-gutter-mode t)
 
 ;; Suppresion des espaces en fin de ligne à l'enregistrement
 (add-hook'before-save-hook'whitespace-cleanup)

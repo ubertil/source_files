@@ -10,17 +10,15 @@
 
 ## Variables -------------------------------------------------------------
 
-NAME		=
+NAME		=	a.out
 
-SRCS		=
+SRCS		=	srcs/main.c \
 
 OBJS		=	$(SRCS:.c=.o)
 
 RM		=	rm -f
 
-CC		=	cc
-
-ERRLOG		=	errors~
+CC		=	gcc
 
 DEFAULT         =       "\033[00m"
 GREEN           =       "\033[0;32m"
@@ -30,7 +28,7 @@ YELLOW          =       "\033[01;33m"
 
 ECHO            =       /bin/echo -e
 
-CONTRIBUTORS	=	"by Come GRELLARD and Louis-Emile UBERTI"
+CONTRIBUTORS	=	"by Louis-Emile UBERTI"
 
 CFLAGS		+=	-W -Wall -Werror -Wextra -I./include
 
@@ -46,17 +44,16 @@ title:
 
 $(NAME):	$(OBJS)
 		@$(CC) -o $(NAME) $(OBJS) && \
-		 $(ECHO) $(GREEN) "[BINARY COMPILED]" $(DEFAULT)
+		 $(ECHO) $(GREEN) "["$(NAME)" COMPILED]" $(DEFAULT)
 
 .c.o:
-		@$(CC) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
+		@$(CC) $(CFLAGS) -c $< -o $@ && \
 		 $(ECHO) $(GREEN) "[.o OK]" $(BLUE) $< $(DEFAULT) || \
 		 $(ECHO) $(RED) "[ERROR]" $(BLUE) $< $(DEFAULT)
 
 ## Cleaning ---------------------------------------------------------------
 
 clean:
-		 @$(RM) $(ERRLOG)
 		 @$(RM) $(OBJS) && \
 		  $(ECHO) $(GREEN) "[CLEAN SUCCESS]" $(DEFAULT)
 
