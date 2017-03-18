@@ -21,8 +21,6 @@ RM		=	rm -f
 CC1		=	gcc -c -fPIC
 CC2		=	gcc -shared
 
-ERRLOG		=	errors~
-
 DEFAULT         =       "\033[00m"
 GREEN           =       "\033[0;32m"
 BLUE            =       "\033[1;36m"
@@ -31,12 +29,7 @@ YELLOW          =       "\033[01;33m"
 
 ECHO            =       /bin/echo -e
 
-LINE1           =       " _   _ ____  _____ ____ _____ ___     _\n"
-LINE2           =       "| | | | __ )| ____|  _ |_   _|_ _|   | |\n"
-LINE3           =       "| | | |  _ \|  _| | |_) || |  | |    | |\n"
-LINE4           =       "| |_| | |_) | |___|  _ < | |  | |    | |___\n"
-LINE5           =       " \___/|____/|_____|_| \_\|_| |___|   |_____|\n"
-LINE6           =       "                               |_____|"
+CONTRIBUTORS	=	"by Louis-Emile Uberti"
 
 CFLAGS		+=	-W -Wall -Werror -Wextra
 
@@ -47,13 +40,12 @@ all:		title $(NAME)
 title:
 		@$(ECHO) $(BLUE)$(NAME)
 		@$(ECHO) "Compiled with" "$(CFLAGS)"
-		@$(ECHO) $(GREEN)$(LINE1)$(LINE2)$(LINE3)$(LINE4)$(LINE5) \
-		 $(LINE6) $(DEFAULT)
+		@$(ECHO) $(GREEN)$(CONTRIBUTORS)$(DEFAULT)
 
 
 $(NAME):	$(OBJS)
 		@$(CC2) -o $(NAME) $(OBJS) && \
-		 $(ECHO) $(GREEN) "[.SO BUILT]" $(DEFAULT)
+		 $(ECHO) $(GREEN) "["$(NAME)" BUILT]" $(DEFAULT)
 
 .c.o:
 		@$(CC1) $(CFLAGS) -c $< -o $@ 2>> $(ERRLOG) && \
@@ -63,8 +55,6 @@ $(NAME):	$(OBJS)
 ## Cleaning ---------------------------------------------------------------
 
 clean:
-		 @$(RM) $(ERRLOG)
-		 @$(RM) *~
 		 @$(RM) $(OBJS) && \
 		  $(ECHO) $(GREEN) "[CLEAN SUCCESS]" $(DEFAULT)
 
