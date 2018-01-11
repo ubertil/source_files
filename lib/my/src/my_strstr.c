@@ -8,7 +8,7 @@
 ** Last update Sat Dec 12 08:15:53 2015 louis-emile uberti-ares
 */
 
-void	my_putchar(char );
+void	my_putchar(char c);
 
 void	my_putstr_found(char *str, int count2)
 {

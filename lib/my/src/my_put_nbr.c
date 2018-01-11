@@ -8,8 +8,6 @@
 ** Last update Sat Mar 26 23:59:12 2016 louis-emile uberti-ares
 */
 
-#include <unistd.h>
-
 void	my_put_nbr(int nb)
 {
   int	modulo;

@@ -1,0 +1,53 @@
+alias pogo='ping google.com'
+alias blih='/Users/uberti_l/rendu/./blih'
+alias clone='/Users/uberti_l/rendu/./clone'
+alias prepare='/Users/uberti_l/rendu/./prepare'
+alias push='/Users/uberti_l/rendu/./push'
+alias lapin='/Users/uberti_l/rendu/./lapin'
+alias ne='emacs -nw'
+alias emacs='emacs -nw'
+alias ma='make re; make clean'
+alias cl='clear'
+alias clear='printf "\033c"'
+alias supervalgrind='valgrind --tool=memcheck --leak-check=yes'
+alias ..='cd ..'
+alias cd..='cd ..'
+alias coinmon='clear && coinmon -c eur'
+alias asciiart='figlet'
+alias ngrok='~/./ngrok http 8080'
+alias ls='ls -GFh'
+alias python='python3'
+alias la='ls -la'
+alias ll='ls -l'
+alias phantomjs='phantomjs --ssl-protocol=any --web-security=false'
+alias phplog="tail /Applications/MAMP/logs/php_error.log"
+alias rmds='sudo find / -name ".DS_Store" -depth -exec rm {} \;'
+alias gdb='sudo gdb'
+alias fixgit='git rm -r --cached . && push ".gitignore is now working"'
+alias ldd='otool -L'
+alias droit='/Users/uberti_l/rendu/./droit'
+
+# QT ALIAS
+alias archivegen='/Users/uberti_l/Qt/QtIFW-3.0.1/bin/./archivegen'
+alias binarycreator='/Users/uberti_l/Qt/QtIFW-3.0.1/bin/./binarycreator'
+alias devtool='/Users/uberti_l/Qt/QtIFW-3.0.1/bin/./devtool'
+alias installerbase='/Users/uberti_l/Qt/QtIFW-3.0.1/bin/./installerbase'
+alias macdeployqt='/Users/uberti_l/Qt/5.10.0/clang_64/bin/./macdeployqt'
+alias qmake='/Users/uberti_l/Qt/5.10.0/clang_64/bin/./qmake'
+alias repogen='/Users/uberti_l/Qt/QtIFW-3.0.1/bin/./repogen'
+
+export LD_LIBRARY_PATH="/Users/uberti_l/.froot/lib/"
+export C_INCLUDE_PATH="/Users/uberti_l/.froot/include/"
+export CPLUS_INCLUDE_PATH="/Users/uberti_l/.froot/include/"
+export OPENSSL_ROOT_DIR="/usr/local/ssl"
+export OPENSSL_LIBRARIES="/usr/local/ssl/lib/"
+export PATH="/usr/local/opt/openssl/bin:/usr/local/bin:/usr/local/sbin/:/usr/local/bin/sublime:/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}/"
+export PS1='\[\e[0;31m\][\A]\u@\h:\[\e[0m\e[0;32m\]\W\[\e[1;33m\]\[\e[0;37m\]\$\[\e[0m\] '
+export EDITOR='emacs'
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+PATH=$PATH:/opt/metasploit-framework/bin
+export PATH=$PATH:/opt/metasploit-framework/bin
+if [ -f /etc/bash.command-not-found ]; then
+    . /etc/bash.command-not-found
+fi

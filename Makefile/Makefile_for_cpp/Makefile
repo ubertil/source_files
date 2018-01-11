@@ -12,9 +12,9 @@
 
 NAME		=	a.out
 
-SRCS		=	srcs/main.c \
+SRCS		=	srcs/main.cpp \
 
-OBJS		=	$(SRCS:.c=.o)
+OBJS		=	$(SRCS:.cpp=.o)
 
 RM		=	rm -f
 
@@ -30,7 +30,7 @@ ECHO            =       /bin/echo -e
 
 CONTRIBUTORS	=	"by Louis-Emile UBERTI"
 
-CXXFLAGS	+=	-W -Wall -Werror -Wextra -I./include
+CXXFLAGS	+=	-W -Wall -Werror -Wextra -I./include -std=c++17
 
 ## Compile ---------------------------------------------------------------
 
